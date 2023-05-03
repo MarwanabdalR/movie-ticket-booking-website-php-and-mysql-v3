@@ -65,8 +65,7 @@
                     <div class="responsive-menu"></div>
                     <div class="mainmenu">
                         <ul id="primary-menu">
-                            <li><a class="<?= empty($_SERVER['QUERY_STRING']) ? 'active' : ''; ?>"
-                                    href="<?= URL; ?>">Home</a></li>
+                            
                             <li><a class="<?= stripos($_SERVER['QUERY_STRING'], 'movie/all') || stripos($_SERVER['QUERY_STRING'], 'movie/detail') ? 'active' : ''; ?>"
                                     href="<?= URL; ?>movie/all">Movies</a></li>
                             <li><a class="<?= stripos($_SERVER['QUERY_STRING'], 'celebrity') ? 'active' : ''; ?>"
