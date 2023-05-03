@@ -1,7 +1,7 @@
 <?php
 	// تمام كده ظهرتتتتتت؟؟؟؟؟؟؟؟؟؟؟؟؟؟؟؟
 	// تمام كده ظهر؟؟؟؟؟؟؟؟؟؟؟؟؟؟؟؟
-// ini_set('display_errors', 1);
+// ini_set('display_errors', 1);marwan
     // ini_set('display_startup_errors', 1);
     // error_reporting(E_ALL);
     
