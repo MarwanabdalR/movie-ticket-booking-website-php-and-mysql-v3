@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
+
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -27,8 +29,10 @@
 </head>
 
 <body>
-
-
+<select id="language_selector">
+<option value="ar"> العربيه</option>
+<option value="En"> English</option>
+</select>
 
     <!-- Page loader -->
     <div id="preloader"></div>
@@ -50,7 +54,7 @@
                             <a href="javascript:void(0);">Welcome Guest!</a>
                         </li>
                         <li>
-                            <a class="" href="#">Login</a>
+                            <a class="" href="#" data-lang='login'>Login</a>
                         </li> <?php } ?>
                     </ul>
                 </div>
@@ -70,3 +74,6 @@
             </div>
         </div>
     </header>
+    <script scr="./languages.js"></script>
+    
+    
