@@ -67,6 +67,8 @@
 <script src="<?= JS; ?>main.js?v=<?= time(); ?>"></script>
 <script src="<?= JS; ?>script.js?v=<?= time(); ?>"></script>
 <script src="<?= JS; ?>sweetalert.min.js"></script>
+<script scr="<?= JS; ?>languages.js"></script>
+
 </body>
 
 </html>

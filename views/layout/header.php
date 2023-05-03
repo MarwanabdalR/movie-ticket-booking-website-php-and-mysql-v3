@@ -77,6 +77,5 @@
             </div>
         </div>
     </header>
-    <script scr="./languages.js"></script>
     
     
