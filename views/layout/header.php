@@ -29,15 +29,18 @@
 </head>
 
 <body>
-<select id="language_selector">
-<option value="ar"> العربيه</option>
-<option value="En"> English</option>
+
 </select>
 
     <!-- Page loader -->
     <div id="preloader"></div>
     <!-- header section start -->
     <header class="header">
+        
+    <h2>
+        <span onclick="Ar();" class="Ar" id="Ar" style="cursor: pointer"> Ar</span>
+        <span onclick="En();" class="En" id="En" style="cursor: pointer"> En</span>
+    </h2>
             <div class="header-area">
                 <div class="logo">
                     <a href="<?= URL; ?>"><img src="<?= IMG; ?>logo.png" alt="logo" /></a>
