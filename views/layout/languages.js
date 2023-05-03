@@ -17,6 +17,6 @@ function updatalanguage(){
         let key=nodes[i].getAttribute('data-lang');
         nodes[i].innerHTML =lang[language][key];
     }
- 
+
 
 }
