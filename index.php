@@ -4,7 +4,7 @@
 // ini_set('display_errors', 1);marwan
     // ini_set('display_startup_errors', 1);
     // error_reporting(E_ALL);
-    
+    // مرووووووووان بيسمع ع مجدي
     session_start();
 	
 	require_once("system/config.php");
