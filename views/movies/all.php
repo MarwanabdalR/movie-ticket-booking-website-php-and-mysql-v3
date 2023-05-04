@@ -1,5 +1,26 @@
+<?php
+    if (isset($_GET['text'])){
+        ob_get_clean();
+        $searchText = $_GET['text'];
+        $con = mysqli_connect('localhost', 'root', '', 'book_cinema');
+        $sql = " SELECT *, movie_thumbnails.file_path as movie_thumbnails, trailers.file_path as trailers FROM `movies` JOIN movie_thumbnails ON movie_thumbnails.movie_id = movies.id JOIN trailers ON trailers.movie_id = movies.id WHERE movies.name LIKE'%$searchText%'";
+        $results = mysqli_query($con, $sql);
+        $rows = mysqli_fetch_all($results, MYSQLI_ASSOC);
+        header('Content-type: application/json');
+        echo json_encode($rows);
+        die();
+    }
+?>
 <section class="breadcrumb-area">
     <div class="container">
+        <div class="row" style="width:380px; margin-left:360px">
+            <div class="col-lg-12" >
+            <div class="input-group"> 
+                <input type="search" class="form-control rounded" placeholder="Search" id='search' aria-label="Search" aria-describedby="search-addon"  />
+                
+            </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-area-content">
@@ -167,12 +188,12 @@
             </div>
         </div>
     <?php endforeach; ?>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
         function showTrailer(self) {
             var id = self.getAttribute("data-id");
             $('.movie-trailer-' + id).show();
-        }
+        };
 
         function closeTrailer(self) {
             var id = self.getAttribute("data-id");
@@ -180,7 +201,46 @@
             $('.movie-trailer-' + id + ' video').each(function() {
                 $(this).get(0).pause();
             });
-        }
+        };
+        $("#search").on('keypress', function(e){
+            if (e.which == 13 ){
+                $.ajax({
+                    url : '',
+                    type : 'GET',
+                    data : {
+                        text : $('#search').val()
+                    },
+                    success : function(response){
+                        //console.log(response);
+                        $('.spotlight').empty();
+                        for (movie of response){
+                            let div = `
+                                    <div class="col-md-4 col-sm-6 all soon" style="">
+                                    <div class="single-portfolio">
+                                        <div class="single-portfolio-img">
+                                            <img src="http://localhost/movie-ticket-booking-website-php-and-mysql-v3/${movie['movie_thumbnails']}" alt="portfolio">
+                                            
+                                            <video class="mfp-hide" controls="" src="http://localhost/movie-ticket-booking-website-php-and-mysql-v3/${movie['trailers']}" id="spotlight-trailer-video-${movie['id']}"></video>
+                                            <a href="#spotlight-trailer-video-${movie['id']}" class="popup-youtube">
+                                                <i class="icofont icofont-ui-play"></i>
+                                            </a>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h2>
+                                                <a href="http://localhost/movie-ticket-booking-website-php-and-mysql-v3/movie/detail/${movie['id']}">${movie['name']}</a>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            `
+                            console.log(movie)
+                            $('.spotlight').append(div);
+                        }
+                        
+                    }
+                })
+            }
+        })
     </script>
 
 </section><!-- video section end -->
