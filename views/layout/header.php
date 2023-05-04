@@ -65,6 +65,16 @@
                                     href="<?= URL; ?>movie/all">Movies</a></li>
                             <li><a class="<?= stripos($_SERVER['QUERY_STRING'], 'celebrity') ? 'active' : ''; ?>"
                                     href="<?= URL . 'celebrity'; ?>">CelebritiesList</a></li>
+                                    <li><a class="<?= stripos($_SERVER['QUERY_STRING'], '#') ? 'active' : ''; ?>"
+                                    href="<?= URL ; ?>">Booking</a></li>
+                                    <li><a class="<?= stripos($_SERVER['QUERY_STRING'], '#') ? 'active' : ''; ?>"
+                                    href="<?= URL ; ?>">Preorder</a></li>
+                                
+                                    <li><a class="<?= stripos($_SERVER['QUERY_STRING'], '#') ? 'active' : ''; ?>"
+                                    href="<?= URL ; ?>">Feedback</a></li>
+                                
+                                    
+                                
                         </ul>
                     </div>
                 </div>
