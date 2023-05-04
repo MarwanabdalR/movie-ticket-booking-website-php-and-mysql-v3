@@ -9,7 +9,7 @@
                     <h6><span>Call us: </span>(+880) 111 222 3456</h6>
                 </div>
             </div>
-             <div class="col-lg-3 col-sm-6">
+            <!-- <div class="col-lg-3 col-sm-6">
                         <div class="widget">
                             <h4>Legal</h4>
                             <ul>
@@ -29,7 +29,7 @@
                                 <li><a href="#">User Guide</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
         </div>
         <hr />
     </div>

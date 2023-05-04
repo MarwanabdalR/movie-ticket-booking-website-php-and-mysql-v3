@@ -29,7 +29,7 @@ Description: Online Movie,Vedio and TV Show HTML Template
  * Movie details PAGE CSS
  * seat plan PAGE CSS
  * login PAGE CSS
- * blog PAGE CSS          
+ * blog PAGE CSS
  * blog details PAGE CSS
  * PRELOADER CSS
 **/
@@ -326,7 +326,6 @@ input::-webkit-input-placeholder {
     display: inline-block;
 	margin-right: 30px;
 	padding: 3px 0;
-    font-size: 25px;
 }
 .slicknav_menu {
 	padding: 0;
@@ -959,7 +958,10 @@ hr {
     display: flex;
 }
 
-
+.details-thumb > div h4,
+.details-thumb > div i {
+	/*transition: 0.4s;*/
+}
 .details-thumb > div:hover h4,
 .details-thumb > div:hover i {
 	color: #eb315a
@@ -1164,7 +1166,7 @@ hr {
     margin-bottom: 20px;
 }
 
-
+.login-box h6 {}
 
 .login-box h6 {
     color: #03090e;
