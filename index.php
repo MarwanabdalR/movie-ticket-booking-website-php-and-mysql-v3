@@ -5,12 +5,9 @@
     // ini_set('display_startup_errors', 1);
     // مرووووووووان بيسمع ع مجدي
     session_start();
-	
 	require_once("system/config.php");
-	// require_once("system/Security.php");
 	require_once("controllers/Controller.php");
 	require_once("models/Model.php"); //database model
-	
 	if(isset($_GET["url"]))
 	{
 		$parts = explode("/", $_GET["url"]);

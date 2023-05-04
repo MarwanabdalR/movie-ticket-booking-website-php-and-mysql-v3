@@ -1,5 +1,29 @@
+<?php
+
+if(!isset($_SESSION['lang'])){
+    $_SESSION['lang'] = 'ar';
+}
+
+if(isset($_GET['lang']) && !empty($_GET['lang']) ){
+        if ($_GET['lang'] == 'ar' ) {
+            # code...
+        $_SESSION['lang'] = 'ar';
+        }
+        elseif ($_GET['lang'] == 'en') {
+            # code...
+            $_SESSION['lang'] = 'en';
+        }
+}	
+require_once 'layout/lang/'.$_SESSION['lang'].'.php';
+
+?>
+
+
+
+
 <section class="hero-area" id="home">
     <div class="container">
+        
 
         <div class="hero-area-slider">
             <?php
@@ -32,7 +56,7 @@
                             <p><?= substr($movie->movie->description, 0, 100); ?></p>
                             
                             <div class="slide-trailor">
-                                <h3 data-id="<?= $movie->movie->id; ?>" onclick="showTrailers(this);" style="cursor: pointer;">Watch Trailer</h3>
+                                <h3 data-id="<?= $movie->movie->id; ?>" onclick="showTrailers(this);" style="cursor: pointer;" ><?php echo $hedr['tralers'] ?></h3>
                             </div>
                         </div>
                     </div>
@@ -402,3 +426,9 @@
         </div>
     </div>
 </section><!-- video section end -->
+
+                <ul>
+                    <li><a href="?lang=ar"><?php echo $hedr['ar'] ?></a></li>
+                    <li><a href="?lang=en"><?php echo $hedr['en'] ?></a></li>
+                </ul>
+                <!-- <p style="margin-top: 20px;" ><?php //echo $hedr['title'] ?></p> -->
