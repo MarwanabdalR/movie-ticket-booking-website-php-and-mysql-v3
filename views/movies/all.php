@@ -1,4 +1,6 @@
+
 <?php
+//MMMMMMMMMM
     if (isset($_GET['text'])){
         ob_get_clean();
         $searchText = $_GET['text'];
