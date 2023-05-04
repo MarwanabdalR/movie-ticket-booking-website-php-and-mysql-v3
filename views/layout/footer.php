@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-left">
                     <div class="copyright-content">
-                        <p><a target="_blank" href="https://www.templateshub.net"></a></p>
+                        <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
