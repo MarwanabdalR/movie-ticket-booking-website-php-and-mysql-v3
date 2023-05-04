@@ -5,6 +5,7 @@
     // ini_set('display_startup_errors', 1);
     // مرووووووووان بيسمع ع مجدي
 	//fgrfdhgfdhfdg
+	//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     session_start();
 	require_once("system/config.php");
 	require_once("controllers/Controller.php");
