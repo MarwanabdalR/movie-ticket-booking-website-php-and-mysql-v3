@@ -7,6 +7,12 @@
 	//fgrfdhgfdhfdg
 	//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	//lvdl
+
+/* تعديلات البوكينج: ضيفنا لو الفايل موجود واليوزر دخل عليه عادي من زرار البوكينج مش من اليو ار ال  
+يخش عليه لازم يبقي فيه فايل في فولدر الكونترولر اوله كابيتال وبيحتوي علي كونترول في النص 
+
+
+*/
     session_start();
 	require_once("system/config.php");
 	require_once("controllers/Controller.php");
@@ -18,6 +24,12 @@
 		{
 			require_once("controllers/" . ucfirst($parts[0]) . "Controller.php");
 			$controller_name = ucfirst($parts[0]) . "Controller";
+			$controller = new $controller_name();
+		}
+		elseif(file_exists("controllers/BookController.php"))
+		{
+			require_once("controllers/BookController.php");
+			$controller_name = "BookController";
 			$controller = new $controller_name();
 		}
 		else
