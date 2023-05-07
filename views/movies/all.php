@@ -1,33 +1,10 @@
-
-<?php
-//MMMMMMMMMM
-    if (isset($_GET['text'])){
-        ob_get_clean();
-        $searchText = $_GET['text'];
-        $con = mysqli_connect('localhost', 'root', '', 'book_cinema');
-        $sql = " SELECT *, movie_thumbnails.file_path as movie_thumbnails, trailers.file_path as trailers FROM `movies` JOIN movie_thumbnails ON movie_thumbnails.movie_id = movies.id JOIN trailers ON trailers.movie_id = movies.id WHERE movies.name LIKE'%$searchText%'";
-        $results = mysqli_query($con, $sql);
-        $rows = mysqli_fetch_all($results, MYSQLI_ASSOC);
-        header('Content-type: application/json');
-        echo json_encode($rows);
-        die();
-    }
-?>
 <section class="breadcrumb-area">
     <div class="container">
-        <div class="row" style="width:380px; margin-left:360px">
-            <div class="col-lg-12" >
-            <div class="input-group"> 
-                <input type="search" class="form-control rounded" placeholder="Search" id='search' aria-label="Search" aria-describedby="search-addon"  />
-                
-            </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-area-content">
                     <h1>Movies Page</h1>
-
+            
                     <?php if (isset($_SESSION["success"])): ?>
                         <div class="offset-md-4 col-md-4 alert alert-success">
                             <?= $_SESSION["success"]; ?>

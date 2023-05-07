@@ -40,14 +40,9 @@ class UsersModel extends Model
             $row = mysqli_fetch_object($result);
             if (password_verify($password, $row->password))
             {
-                if ($row->verified_at == NULL)
-                {
-                    $response["error"] = "Please verify your account in order to activate.";
-                }
-                else
-                {
+                
                     $response["message"] = $row;
-                }
+                
             }
             else
             {

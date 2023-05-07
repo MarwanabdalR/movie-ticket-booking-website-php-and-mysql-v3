@@ -35,26 +35,27 @@
     <div id="preloader"></div>
     <!-- header section start -->
     <header class="header">
+                <?php if (isset($_SESSION["login_success"])): ?>
+                    <div class="offset-md-4 col-md-4 alert alert-success">
+                        <?= $_SESSION["login_success"]; ?>
+                    </div>
+                <?php unset($_SESSION["login_success"]); endif; ?>
             <div class="header-area">
                 <div class="logo">
                     <a href="<?= URL; ?>"><img src="<?= IMG; ?>logo.png" alt="logo" /></a>
                 </div>
                 <div class="header-right">
-                    <ul> <?php if (isset($_SESSION["user"])) { ?> 
-                        <li>
-                            <a href="javascript:void(0);">Welcome!</a>
-                        </li>
-                        <li>
-                            <a href="<?= URL; ?>user/logout">Logout</a>
-                        </li> <?php } else { ?> 
-                        <li>
-                            <a href="javascript:void(0);">Welcome Guest!</a>
-                        </li>
-                        <li>
-                            <a class="" href="#" data-lang='login'>Login</a>
-                        </li> <?php } ?>
-                    </ul>
+                        <ul>
+                            <?php if (isset($_SESSION["user"])) { ?>
+                                <li><a href="javascript:void(0);">Welcome ya 7oob🫡😘!</a></li>
+                                <li><a href="<?= URL; ?>user/logout">Logout</a></li>
+                            <?php } else { ?>
+                                <li><a href="javascript:void(0);">Welcome Guest</a></li>
+                                <li><a class="login-popup" href="#">Login</a></li>
+                            <?php } ?>
+                        </ul>
                 </div>
+
                 <div class="menu-area">
                     <div class="responsive-menu"></div>
                     <div class="mainmenu">
@@ -67,14 +68,78 @@
                                     href="<?= URL . 'celebrity'; ?>">CelebritiesList</a></li>
                             <li><a class="<?= stripos($_SERVER['QUERY_STRING'], 'bookk') ? 'active' : ''; ?>"
                                     href="<?= URL . 'bookk'; ?>"> Booking</a></li>
-                            <li><a 
-                                    href="#"> Preorder</a></li>
-                                    
                         </ul>
                     </div>
+            <div class="row" style="width:380px; margin-left:360px">
+                <div class="col-lg-12" >
+                    <input type="search" class="form-control rounded" placeholder="Search" id='search' aria-label="Search" aria-describedby="search-addon"/>
+                </div>
+            </div>
+            <?php
+                //MMMMMMMMMM
+                    if (isset($_GET['text'])){
+                        ob_get_clean();
+                        $searchText = $_GET['text'];
+                        $con = mysqli_connect('localhost', 'root', '', 'book_cinema');
+                        $sql = " SELECT *, movie_thumbnails.file_path as movie_thumbnails, trailers.file_path as trailers FROM `movies` JOIN movie_thumbnails ON movie_thumbnails.movie_id = movies.id JOIN trailers ON trailers.movie_id = movies.id WHERE movies.name LIKE'%$searchText%'";
+                        $results = mysqli_query($con, $sql);
+                        $rows = mysqli_fetch_all($results, MYSQLI_ASSOC);
+                        header('Content-type: application/json');
+                        echo json_encode($rows);
+                        die();
+                    }
+            ?>
                 </div>
             </div>
         </div>
     </header>
     
-    
+    <div class="login-area">
+            <div class="login-box">
+                <a href="#"><i class="icofont icofont-close"></i></a>
+                <h2>LOGIN</h2>
+                <form action="<?= URL . 'user/login' ?>" method="POST">
+
+
+                    <h6>EMAIL ADDRESS</h6>
+                    <input type="email" name="email" required="" />
+                    <h6>PASSWORD</h6>
+                    <input type="password" name="password" required="" />
+                    <div class="login-signup">
+                        <span>SIGNUP</span>
+                    </div>
+
+                    <input type="submit" class="theme-btn" value="LOG IN" style="background: #eb315a;">
+                </form>
+                
+            </div>
+        </div>
+
+        <div class="signup-area">
+            <div class="login-box">
+                <a href="#"><i class="icofont icofont-close"></i></a>
+                <h2>SIGN UP</h2>
+                <form action="<?= URL . 'user/register' ?>" method="POST">
+
+                    <h6>Name</h6>
+                    <input type="text" name="name" required="" />
+
+                    <h6>Mobile number</h6>
+                    <input type="number" name="mobile_number" required="" />
+
+                    <h6>EMAIL ADDRESS</h6>
+                    <input type="email" name="email" required="" />
+
+                    <h6>PASSWORD</h6>
+                    <input type="password" name="password" required="" />
+                    
+                    <div class="login-popup login-popup-btn">
+                        <span>LOGIN</span>
+                    </div>
+                    <input type="submit" class="theme-btn" value="SIGN UP" style="background: #eb315a;">
+                </form>
+                
+            </div>
+        </div>
+
+        <input id="BASE_URL" style="display: none;" type="hidden" value="<?= URL; ?>">
