@@ -1,5 +1,5 @@
 <?php
-
+/*
 $dbhost="localhost";
 $dbuser="root";
 $dbpass="";
@@ -17,7 +17,7 @@ else{
 
 }
 
-
+*/
 
 
 
@@ -67,10 +67,11 @@ else{
             
 
 
-                        <form method="post">
+                        <form method="post" >
                             <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">Full Name</label>
                             <input type="text" 
+                            required=""
                             class="form-control" 
                             name="name" 
                             id="basic-default-fullname" 
@@ -83,6 +84,7 @@ else{
                             <div class="input-group input-group-merge">
                                 <input
                                 type="text"
+                                required=""
                                 id="basic-default-email"
                                 class="form-control"
                                 name="email"
@@ -100,20 +102,44 @@ else{
                             <label class="form-label" for="basic-default-phone">Phone No</label>
                             <input
                                 type="text"
+                                required=""
                                 id="basic-default-phone"
                                 name="phone"
                                 class="form-control phone-mask"
                                 placeholder="658 799 8941"
                             />
                             </div>
-                            <div class="mb-3">
+                            
+                          
                             <label class="form-label" for="basic-default-company">movie name</label>
-                            <input type="text" 
-                            class="form-control" 
-                            name="movie_name" 
-                            id="basic-default-company" 
-                            placeholder="movie name" />
-                            </div>
+                            <select name="movie_name" required="" >
+                                <option selected disabled>choose movie you need</option>
+                                <option value="The Wood">The Wood</option>
+                                <option value="Bloodshot">Bloodshot</option>
+                                <option value="Morbius">Morbius</option>
+                                <option value="The House">The House</option>
+                                <option value="Uncharted">Uncharted</option>
+
+                            </select>
+                            <style>
+                                select{
+                         outline: 0;
+                         box-shadow: none;
+                        border: 0;
+                        background: #dfdfdf;
+                        width: 100%;
+                        height: 49px;
+                        border-radius: 5px;
+                        font-size: 17px;
+                        font-weight: 4  00;
+                        margin-top: 0;
+                        margin-bottom: 20px;
+                                }
+                                option{
+                                    color :black;
+                                    font-size: 23px;
+                                }
+                            </style>
                             <div class="mb-3">
                             <label class="form-label" for="basic-default-company">Number of Tickets</label>
                             <input type="text" 
@@ -135,6 +161,7 @@ else{
                         </div>
                     </div>
                     </div>
+         
                     
                 </div>
                 </div>

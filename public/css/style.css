@@ -57,8 +57,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 500;
-	color: #fff;
+    color: #d4bc95;
+    font-weight: bold;
 }
 h1,
 h2,
@@ -141,7 +141,7 @@ input[type="search"],
 input[type="password"],
 input[type="number"],
 textarea {
-    background: #24262d;
+    background: #dfdfdf;
     width: 100%;
     padding: 8px 15px;
     border: none;
@@ -149,8 +149,10 @@ textarea {
 input[type="submit"],
 button[type="submit"] {
     width: auto;
-    color: #666;
+    color: #000;
     padding: 4px 15px;
+    background: #2251ea;
+    box-shadow: 5px 5px 11px;
 }
 textarea:focus {
     outline: none !important;
