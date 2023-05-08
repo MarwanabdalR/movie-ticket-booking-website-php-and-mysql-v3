@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2023 at 02:39 PM
+-- Generation Time: May 08, 2023 at 12:55 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,6 +40,30 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`) VALUES
 (1, 'Admin', 'admin@gmail.com', '$2y$10$BqCGHI7Tr1nWxX5p.4RleeKPshxUv6WFpf25fWZCkyClA.N6TVjTm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `movie name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `number of tickets` int(50) NOT NULL,
+  `movie time` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `seat number` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `movie name`, `number of tickets`, `movie time`, `seat number`) VALUES
+(40, 'Marwan magdy15555', 'mano55@gmail.com', '010213214072525', 'The Wood', 15, '17:55', 11);
 
 -- --------------------------------------------------------
 
@@ -291,6 +315,12 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -367,6 +397,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `categories`
