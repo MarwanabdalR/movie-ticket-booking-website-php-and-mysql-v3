@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2023 at 12:55 PM
+-- Generation Time: May 09, 2023 at 03:28 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -55,15 +55,27 @@ CREATE TABLE `booking` (
   `movie name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `number of tickets` int(50) NOT NULL,
   `movie time` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `seat number` int(255) NOT NULL
+  `seat number` int(255) NOT NULL,
+  `food&drinks` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `movie name`, `number of tickets`, `movie time`, `seat number`) VALUES
-(40, 'Marwan magdy15555', 'mano55@gmail.com', '010213214072525', 'The Wood', 15, '17:55', 11);
+INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `movie name`, `number of tickets`, `movie time`, `seat number`, `food&drinks`) VALUES
+(58, 'Marwan magdy', 'mano55@gmail.com', '12345', 'Bloodshot', 10, '17:44', 40, 'Popcorn (Small),Popcorn (Medium),Popcorn (Larg)'),
+(59, 'Marwan magdy2020', 'shamel@gmail.com', '010213214072525', 'The House', 15, '17:05', 144, 'Popcorn (Small),Popcorn (Medium),Popcorn (Larg),co'),
+(60, 'Marwan magdy2020', 'shamel@gmail.com', '010213214072525', 'The House', 15, '17:05', 144, 'Popcorn (Small),Popcorn (Medium),Popcorn (Larg),cola'),
+(61, 'Marwan magdy142525', 'marwanmagdy826@gmail.com', '2023253', 'Bloodshot', 100, '14:22', 125, 'Popcorn (Medium),Popcorn (Larg),cola,7up'),
+(62, 'Marwan magdy142525', 'marwanmagdy826@gmail.com', '2023253', 'Bloodshot', 100, '14:22', 125, 'Popcorn (Medium),Popcorn (Larg),cola,7up'),
+(63, 'Marwan magdy142525', 'marwanmagdy826@gmail.com', '2023253', 'Bloodshot', 100, '14:22', 125, 'Popcorn (Medium),Popcorn (Larg),cola,7up'),
+(64, 'Marwan magdy15555', 'admin@gmail.com', '01021321407', 'Bloodshot', 20, '17:52', 20, 'Popcorn (Small),7up'),
+(65, 'Marwan magdy15555', 'admin@gmail.com', '01021321407', 'Bloodshot', 20, '17:52', 20, 'Popcorn (Small),7up'),
+(66, 'Marwan magdy', 'marwanmagdy826@gmail.com', '01021321407', 'Bloodshot', 15, '10:01', 20, 'Popcorn (Small),Popcorn (Medium),Popcorn (Larg),cola,7up,Miranda'),
+(67, 'Marwan magdy', 'marwanmagdy826@gmail.com', '01021321407', 'Bloodshot', 15, '10:01', 20, 'Popcorn (Small),Popcorn (Medium),Popcorn (Larg),cola,7up,Miranda'),
+(68, 'Marwan magdy', 'marwanmagdy826@gmail.com', '01021321407', 'The House', 10, '06:07', 40, 'Popcorn (Larg),cola,Miranda'),
+(69, 'Marwan magdy', 'marwanmagdy826@gmail.com', '01021321407', 'The House', 10, '06:07', 40, 'Popcorn (Larg),cola,Miranda');
 
 -- --------------------------------------------------------
 
@@ -402,7 +414,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `categories`
