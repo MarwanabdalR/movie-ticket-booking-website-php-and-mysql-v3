@@ -1,8 +1,18 @@
+
+        
+            
 <section class="breadcrumb-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-area-content">
+
+
+
+
+
+
+                    
                     <h1>Movies Page</h1>
             
                     <?php if (isset($_SESSION["success"])): ?>
@@ -167,7 +177,6 @@
             </div>
         </div>
     <?php endforeach; ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
         function showTrailer(self) {
             var id = self.getAttribute("data-id");
@@ -181,6 +190,15 @@
                 $(this).get(0).pause();
             });
         };
+    </script>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script>
         $("#search").on('keypress', function(e){
             if (e.which == 13 ){
                 $.ajax({

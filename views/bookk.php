@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-
-=======
 <?php
 
 $dbhost="localhost";
@@ -28,7 +25,6 @@ $res = mysqli_query($connect,$select);
 
 
 ?>
->>>>>>> Stashed changes
 <!-- breadcrumb area start -->
 <section class="breadcrumb-area">
     <div class="container">

@@ -427,6 +427,61 @@ require_once 'layout/lang/'.$_SESSION['lang'].'.php';
     </div>
 </section><!-- video section end -->
 
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-area-content">
+                    <h1>feedback Page</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_sidebar.html -->
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_navbar.html -->
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">feedback</h4>
+                    <p class="card-description"></p>
+                    <form class="forms-sample" method="post">
+                      <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="fname">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" name="femail">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleTextarea1">reveiw</label>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" name="farea"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2" name="fsubmit">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+          
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
                 <ul>
                     <li><a href="?lang=ar"><?php echo $hedr['ar'] ?></a></li>
                     <li><a href="?lang=en"><?php echo $hedr['en'] ?></a></li>

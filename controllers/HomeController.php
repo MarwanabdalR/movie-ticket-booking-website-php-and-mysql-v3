@@ -6,6 +6,7 @@
         {
             $movies = $this->load_model("MovieModel")->get_all_for_home();
             $comming_soon = $this->load_model("MovieModel")->get_comming_soon();
+            $feed=$this->load_model("HomeModel")->finsert();
 
         	require_once VIEW . "layout/header.php";
             require_once VIEW . 'home.php';

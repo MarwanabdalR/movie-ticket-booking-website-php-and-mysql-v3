@@ -55,3 +55,60 @@
         </div>
     </div>
 </div>
+
+<?php
+
+$dbhost="localhost";
+$dbuser="root";
+$dbpass="";
+$dbname="book_cinema";
+
+$connect= mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+
+if(!$connect){
+
+    die("faiiiiiiiled" . mysqli_connect_error());
+
+}
+else{
+    echo "Connection succeeded";
+
+}
+?>
+<!-- sart view feedback -->
+    <div class="container" style="text-align: center;">
+        <center><h1>Contact List</h1></center>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Message</th>
+                <th scope="col">DOOOOOOOONE🫡</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+
+                $query = "select * from feedbacking";
+                $run = mysqli_query($connect,$query);
+                if ($run) {
+                    while ($row=mysqli_fetch_assoc($run)) {
+                        ?>
+
+                <tr>
+                <th scope="row"><?php echo $row['id']; ?></th>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td><?php echo $row['feedback']; ?></td>
+                <td><a class="btn btn-info" href="compcontact.php?id=<?php echo$row['id'] ?>">Complete</a>
+                    &nbsp; <a class="btn btn-danger" href="deletecon.php?id=<?php echo$row['id'] ?>">Delete</a></td>
+                </tr>
+                <?php
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
