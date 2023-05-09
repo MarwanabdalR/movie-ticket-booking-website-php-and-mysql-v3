@@ -1,27 +1,4 @@
-<?php
-/*
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="";
-$dbname="book_cinema";
 
-$connect= mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-
-if(!$connect){
-
-    die("faiiiiiiiled" . mysqli_connect_error());
-
-}
-else{
-    echo "Connection succeeded";
-
-}
-
-*/
-
-
-
-?>
 <!-- breadcrumb area start -->
 <section class="breadcrumb-area">
     <div class="container">
@@ -64,14 +41,13 @@ else{
                         <h5 class="mb-0">Movie Booking Form</h5>
                         </div>
                         <div class="card-body">
-            
-
+        
 
                         <form method="post" >
                             <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">Full Name</label>
                             <input type="text" 
-                            required=""
+                            required
                             class="form-control" 
                             name="name" 
                             id="basic-default-fullname" 
@@ -84,7 +60,7 @@ else{
                             <div class="input-group input-group-merge">
                                 <input
                                 type="text"
-                                required=""
+                                required
                                 id="basic-default-email"
                                 class="form-control"
                                 name="email"
@@ -101,8 +77,8 @@ else{
                             <div class="mb-3">
                             <label class="form-label" for="basic-default-phone">Phone No</label>
                             <input
-                                type="text"
-                                required=""
+                                type="tel"
+                                required
                                 id="basic-default-phone"
                                 name="phone"
                                 class="form-control phone-mask"
@@ -112,7 +88,7 @@ else{
                             
                           
                             <label class="form-label" for="basic-default-company">movie name</label>
-                            <select name="movie_name" required="" >
+                            <select name="movie_name" required >
                                 <option selected disabled>choose movie you need</option>
                                 <option value="The Wood">The Wood</option>
                                 <option value="Bloodshot">Bloodshot</option>
@@ -142,7 +118,8 @@ else{
                             </style>
                             <div class="mb-3">
                             <label class="form-label" for="basic-default-company">Number of Tickets</label>
-                            <input type="text" 
+                            <input type="number"
+                            required 
                             class="form-control" 
                             name="num_of_tickets" 
                             id="basic-default-company" 
@@ -150,13 +127,52 @@ else{
                             </div>
                             <div class="mb-3">
                             <label class="form-label" for="basic-default-company">Movie Time</label>
-                            <input type="time" class="form-control" name="movie_time" id="basic-default-company" placeholder="mm/dd/yyy" />
+                            <input type="time" class="form-control" name="movie_time" required id="basic-default-company" placeholder="hours:minutes" />
                             </div>
                             <div class="mb-3">
                             <label class="form-label" for="basic-default-company">Seat Number</label>
-                            <input type="text" class="form-control" name="seat_number" id="basic-default-company" placeholder="seat number" />
+                            <input type="text" class="form-control" required name="seat_number" id="basic-default-company" placeholder="seat number" />
                             </div>
-                            <button type="submit" class="btn btn-primary" name="done">Book Now</button>
+                          
+                            <label class="che" for="basic-default-company">choose food or drinks if you want </label>
+                    <div class="check">
+<input name="food[]" value="Popcorn (Small)" type="checkbox" class="cheko2" id="">
+<label class="cheko" for="">Popcorn (Small)  <span>$2</span></label>
+<input name="food[]" value="Popcorn (Medium)" type="checkbox" class="cheko2" id="">
+<label class="cheko" for="">Popcorn (Medium) <span>$2.5</span></label>
+<input name="food[]" value="Popcorn (Larg)" type="checkbox" class="cheko2" id="">
+<label class="cheko" for="">Popcorn (Larg) <span>$3</span></label>
+<input name="food[]" value="cola" type="checkbox" class="cheko2" id="">
+<label class="cheko" for="">cola <span>$3</span></label>
+<input name="food[]" value="7up" type="checkbox" class="cheko2" id="">
+<label class="cheko"  for="">7up <span>$3</span></label>
+<input name="food[]" value="Miranda" type="checkbox" class="cheko2" id="">
+<label class="cheko" for="">Miranda  <span>$3</span></label>
+                    </div>
+                    <style>
+.check{
+    display:grid;
+    justify-items: start;
+
+}
+.che{
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 10px 5px 10px;
+}
+.check .cheko{
+    font-size: 20px;
+    font-weight: 300;
+    color: black;
+    font-style: italic;
+}
+.check .cheko2{
+    width: 20px;
+    height: 18px;
+}
+                    </style>
+
+                            <button type="submit" class="btn btn-primary" required name="done">Book Now</button>
                         </form>
                         </div>
                     </div>
