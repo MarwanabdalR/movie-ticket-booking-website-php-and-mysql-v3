@@ -1,4 +1,34 @@
+<<<<<<< Updated upstream
 
+=======
+<?php
+
+$dbhost="localhost";
+$dbuser="root";
+$dbpass="";
+$dbname="book_cinema";
+
+$connect= mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+
+if(!$connect){
+
+    die("faiiiiiiiled" . mysqli_connect_error());
+
+}
+else{
+    echo "Connection succeeded";
+
+}
+
+$select = "SELECT * FROM `movies`";
+$res = mysqli_query($connect,$select);
+// $message = '';
+
+
+
+
+?>
+>>>>>>> Stashed changes
 <!-- breadcrumb area start -->
 <section class="breadcrumb-area">
     <div class="container">
@@ -86,7 +116,7 @@
                             />
                             </div>
                             
-                          
+                        
                             <label class="form-label" for="basic-default-company">movie name</label>
                             <select name="movie_name" required >
                                 <option selected disabled>choose movie you need</option>
@@ -97,6 +127,25 @@
                                 <option value="Uncharted">Uncharted</option>
 
                             </select>
+
+
+
+
+
+
+
+                            <div class="form-group">
+                                <label for="categories">Movies</label>
+                                <select id="categories" name="movie_name" class="form-control" required>
+                                            <option>select ur movie🧐</option>
+                                            <?php foreach($res as $key => $value){?>
+                                            <option 
+                                                value="<?=$value['name'];?>"><?=$value['name'];?>
+                                            </option>
+                                            <?php } ?>
+                                </select>
+                            </div>
+
                             <style>
                                 select{
                          outline: 0;
