@@ -130,6 +130,14 @@ $admin = $this->get_logged_in_admin();
             <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/celebrities/add/"> Add Celebrity </a></li>
 
             <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/celebrities/all/"> All Celebrities </a></li>
+            <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/celebrities/all/"> All Celebrities </a></li>
+
+            
+            <li class="nav-item nav-category"><span class="nav-link">Manage Admin</span></li>
+            <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/Manage_Admin/add/"> Add Admin </a></li>
+
+            <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/Manage_Admin/show/"> Show Admin </a></li>
+            <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/Manage_Admin/edit/"> Edit admin </a></li>
 
           </ul>
         </nav>
