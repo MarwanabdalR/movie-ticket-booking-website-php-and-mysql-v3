@@ -348,9 +348,9 @@
             </div>
             <div class="col-lg-3 text-center text-lg-left">
                 <div class="portfolio-sidebar">
-                    <img src="<?= IMG; ?>sidebar/sidebar1.png" alt="sidebar" />
-                    <img src="<?= IMG; ?>sidebar/sidebar2.png" alt="sidebar" />
-                    <img src="<?= IMG; ?>sidebar/sidebar4.png" alt="sidebar" />
+                    <img src="<?= IMG; ?>sidebar/4.jpeg" alt="sidebar" />
+                    <img src="<?= IMG; ?>sidebar/1.jpg" alt="sidebar" />
+                    
                 </div>
             </div>
         </div>
