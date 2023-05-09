@@ -117,7 +117,7 @@ $res = mysqli_query($connect,$select);
                             </div>
                             
                         
-                            <label class="form-label" for="basic-default-company">movie name</label>
+                            <!-- <label class="form-label" for="basic-default-company">movie name</label>
                             <select name="movie_name" required >
                                 <option selected disabled>choose movie you need</option>
                                 <option value="The Wood">The Wood</option>
@@ -126,7 +126,7 @@ $res = mysqli_query($connect,$select);
                                 <option value="The House">The House</option>
                                 <option value="Uncharted">Uncharted</option>
 
-                            </select>
+                            </select> -->
 
 
 
