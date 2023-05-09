@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2023 at 05:46 PM
+-- Generation Time: May 09, 2023 at 05:54 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,15 +55,25 @@ CREATE TABLE `booking` (
   `movie name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `number of tickets` int(50) NOT NULL,
   `movie time` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `seat number` int(255) NOT NULL
+  `seat number` int(255) NOT NULL,
+  `food&drinks` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `card number` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `card holder` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `expiration mm` int(11) NOT NULL,
+  `expiration yy` int(11) NOT NULL,
+  `cvv` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `movie name`, `number of tickets`, `movie time`, `seat number`) VALUES
-(40, 'Marwan magdy15555', 'mano55@gmail.com', '010213214072525', 'The Wood', 15, '17:55', 11);
+INSERT INTO `booking` (`id`, `name`, `email`, `phone`, `movie name`, `number of tickets`, `movie time`, `seat number`, `food&drinks`, `card number`, `card holder`, `expiration mm`, `expiration yy`, `cvv`) VALUES
+(74, 'مروان مجدي محمد احمد', 'marwanmagdy826@gmail.com', '15555155512522', 'Bloodshot', 5, '17:55', 140, 'Popcorn (Small),cola', '1555555555555555', 'dddddddddddddddddddddddddd', 8, 2030, '1555'),
+(75, 'مروان مجدي محمد احمد', 'marwanmagdy826@gmail.com', '15555155512522', 'Bloodshot', 5, '17:55', 140, 'Popcorn (Small),cola', '1555555555555555', 'dddddddddddddddddddddddddd', 8, 2030, '1555'),
+(76, 'مروان شامل ', 'shamel@gmail.com', '151252222222', 'Morbius', 10, '14:22', 20, 'Popcorn (Small),7up,Miranda', '1555555555555555', 'dfsajdiddddddddddddddd', 9, 2028, '1445'),
+(77, 'مروان عبراضي', 'shamel@gmail.com', '6555555555555', 'Morbius', 1, '17:55', 15, 'Popcorn (Medium),cola,7up', '5515111111111111', 'ksdfamssdddddddddddddd', 8, 2028, '5548'),
+(78, 'varrrrrrrrrrrrrrrrrrrrrr', 'var@gmail.com', '15255559449', 'Morbius', 4, '22:00', 41, 'Popcorn (Small),7up,Miranda', '1555555555555555', 'mano', 9, 2028, '1411');
 
 -- --------------------------------------------------------
 
@@ -428,7 +438,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `categories`
