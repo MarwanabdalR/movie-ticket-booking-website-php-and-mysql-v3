@@ -1,18 +1,8 @@
-
-        
-            
 <section class="breadcrumb-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-area-content">
-
-
-
-
-
-
-                    
                     <h1>Movies Page</h1>
             
                     <?php if (isset($_SESSION["success"])): ?>
@@ -96,10 +86,9 @@
             </div>
             <div class="col-lg-3 text-center text-lg-left">
                 <div class="portfolio-sidebar">
-                    <img src="<?= IMG; ?>sidebar/sidebar1.png" alt="sidebar" />
-                    <img src="<?= IMG; ?>sidebar/sidebar2.png" alt="sidebar" />
-                    <img src="<?= IMG; ?>sidebar/sidebar3.png" alt="sidebar" />
-                    <img src="<?= IMG; ?>sidebar/sidebar4.png" alt="sidebar" />
+                    <img src="<?= IMG; ?>sidebar/4.jpeg" alt="sidebar" />
+                    <img src="<?= IMG; ?>sidebar/1.jpg" alt="sidebar" />
+                    
                 </div>
             </div>
         </div>
@@ -177,6 +166,7 @@
             </div>
         </div>
     <?php endforeach; ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
         function showTrailer(self) {
             var id = self.getAttribute("data-id");
@@ -190,15 +180,6 @@
                 $(this).get(0).pause();
             });
         };
-    </script>
-
-
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-<script>
         $("#search").on('keypress', function(e){
             if (e.which == 13 ){
                 $.ajax({
