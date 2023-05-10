@@ -425,7 +425,8 @@ require_once 'layout/lang/'.$_SESSION['lang'].'.php';
     </div>
 </section><!-- video section end -->
 
-<<<<<<< Updated upstream
+
+<?php if (isset($_SESSION["user"])) { ?>
 
     <div class="container">
         <div class="row">
@@ -481,12 +482,15 @@ require_once 'layout/lang/'.$_SESSION['lang'].'.php';
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-               
-=======
+
              
                     <span id="arbic"><a href="?lang=ar"><?php echo $hedr['ar'] ?></a></span>
                    
                     <span id="arbic"><a href="?lang=en"><?php echo $hedr['en'] ?></a></span>   
                 
->>>>>>> Stashed changes
+
+    <?php                                       } ?>
+
+                
+                
                 <!-- <p style="margin-top: 20px;" ><?php //echo $hedr['title'] ?></p> -->

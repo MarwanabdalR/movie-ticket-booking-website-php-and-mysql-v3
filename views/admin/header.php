@@ -40,43 +40,50 @@ $admin = $this->get_logged_in_admin();
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
+
+      <!--<div class="logo">
+                    <a href="<?//= URL; ?>"><img src="<?//= IMG; ?>logo.png" alt="logo" /></a>
+                </div>-->
+
+
+
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex align-items-center">
           <a class="navbar-brand brand-logo" href="<?= URL; ?>">
-            <img src="<?= ADMIN_IMG; ?>logo.svg" alt="logo" class="logo-dark" />
+            <img src="<?= IMG; ?>logo.png" alt="logo" class="logo-dark" />
           </a>
-          <a class="navbar-brand brand-logo-mini" href="<?= URL; ?>admin"><img src="<?= ADMIN_IMG; ?>logo-mini.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="<?= URL; ?>admin"><img src="<?= IMG; ?>logo.png" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
-          <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome stallar dashboard!</h5>
+          <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome To Movie Point!</h5>
           <ul class="navbar-nav navbar-nav-right ml-auto">
             
             <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    
-                    <?php if (empty($admin->picture)): ?>
-                        <img class="img-xs rounded-circle ml-2" src="<?= ADMIN_IMG; ?>faces/face8.jpg" alt="Profile image">
-                    <?php else: ?>
-                        <img class="img-xs rounded-circle ml-2 admin-picture" src="<?= URL . $admin->picture; ?>" alt="Profile image">
-                    <?php endif; ?>
-
+                   <!-- 
+                    <?//php if (empty($admin->picture)): ?>
+                        <img class="img-xs rounded-circle ml-2" src="<?//= ADMIN_IMG; ?>faces/face8.jpg" alt="Profile image">
+                    <?//php else: ?>
+                        <img class="img-xs rounded-circle ml-2 admin-picture" src="<?//= URL . $admin->picture; ?>" alt="Profile image">
+                    <?//php endif; ?>
+                    -->
                     <span class="font-weight-normal"> <?= $admin->name; ?> </span>
                     <i style="margin-left: 10px;" class="fa fa-angle-down"></i>
                 </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-
-                    <?php if (empty($admin->picture)): ?>
-                        <img class="img-md rounded-circle" src="<?= ADMIN_IMG; ?>faces/face8.jpg" alt="Profile image">
-                    <?php else: ?>
-                        <img class="img-md rounded-circle admin-picture admin-picture-dropdown" src="<?= URL . $admin->picture; ?>" alt="Profile image">
-                    <?php endif; ?>
-                  
+                  <!--
+                    <?//php if (empty($admin->picture)): ?>
+                        <img class="img-md rounded-circle" src="<?//= ADMIN_IMG; ?>faces/face8.jpg" alt="Profile image">
+                    <?//php else: ?>
+                        <img class="img-md rounded-circle admin-picture admin-picture-dropdown" src="<?//= URL . $admin->picture; ?>" alt="Profile image">
+                    <?//php endif; ?>
+                    -->
                   <p class="mb-1 mt-3"><?= $admin->name; ?></p>
                   <p class="font-weight-light text-muted mb-0"><?= $admin->email; ?></p>
                 </div>
 
-                <a class="dropdown-item" href="<?= URL; ?>admin/profile"><i class="dropdown-item-icon icon-user text-primary"></i>Profile</a>
+<a class="dropdown-item" href="<?= URL; ?>admin/profile"><i class="dropdown-item-icon icon-user text-primary"></i>Profile</a>
                 <a class="dropdown-item" href="<?= URL; ?>admin/settings"><i class="dropdown-item-icon icon-settings text-primary"></i>Settings</a>
                 <a class="dropdown-item" href="<?= URL; ?>admin/logout"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
               </div>
@@ -93,52 +100,43 @@ $admin = $this->get_logged_in_admin();
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
+             <!-- <a href="#" class="nav-link">
                 <div class="profile-image">
 
-                    <?php if (empty($admin->picture)): ?>
-                        <img class="img-xs rounded-circle" src="<?= ADMIN_IMG; ?>faces/face8.jpg" alt="Profile image">
-                    <?php else: ?>
-                        <img class="img-xs rounded-circle admin-picture" src="<?= URL . $admin->picture; ?>" alt="Profile image">
-                    <?php endif; ?>
+                    <?//php if (empty($admin->picture)): ?>
+                        <img class="img-xs rounded-circle" src="<?//= ADMIN_IMG; ?>faces/face8.jpg" alt="Profile image">
+                    <?//php else: ?>
+                        <img class="img-xs rounded-circle admin-picture" src="<?//= URL . $admin->picture; ?>" alt="Profile image">
+                    <?//php endif; ?>
                   
                   <div class="dot-indicator bg-success"></div>
-                </div>
+                </div>-->
                 <div class="text-wrapper">
-                  <p class="profile-name"><?= $admin->name; ?></p>
-                  <p class="designation"><?= $admin->email; ?></p>
+                  <p class="profile-name" style="color: #b6b7b9;"><?= $admin->name; ?></p>
+                  <p class="designation" style="color: #b6b7b9;"><?= $admin->email; ?></p>
                 </div>
               </a>
             </li>
             <li class="nav-item nav-category">
-              <span class="nav-link">Dashboard</span>
+              <span class="nav-link" style="color: #ff4d6b;">Dashboard</span>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= URL; ?>admin">
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title" >Dashboard</span>
                 <i class="icon-screen-desktop menu-icon"></i>
               </a>
             </li>
             
-            <li class="nav-item nav-category"><span class="nav-link">Movies</span></li>
+            <li class="nav-item nav-category"><span class="nav-link" style="color: #ff4d6b;">Movies</span></li>
             <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/category/"> Categories </a></li>
             <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/cinema/"> Cinemas </a></li>
             <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/movie/add/"> Add Movie </a></li>
             <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/movie/all/"> All Movies </a></li>
 
-            <li class="nav-item nav-category"><span class="nav-link">Celebrities</span></li>
+            <li class="nav-item nav-category"><span class="nav-link" style="color: #ff4d6b;">Celebrities</span></li>
             <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/celebrities/add/"> Add Celebrity </a></li>
 
             <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/celebrities/all/"> All Celebrities </a></li>
-            <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/celebrities/all/"> All Celebrities </a></li>
-
-            
-            <li class="nav-item nav-category"><span class="nav-link">Manage Admin</span></li>
-            <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/Manage_Admin/add/"> Add Admin </a></li>
-
-            <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/Manage_Admin/show/"> Show Admin </a></li>
-            <li class="nav-item"> <a class="nav-link" href="<?= URL; ?>admin/Manage_Admin/edit/"> Edit admin </a></li>
-
           </ul>
         </nav>
 

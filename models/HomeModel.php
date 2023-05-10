@@ -5,7 +5,6 @@ class HomeModel extends Model
     public $femail;
     public $farea;
     public function finsert(){
-        echo 'iam herrrrrrrrrrrrrr';
         if(isset($_POST['fsubmit'])){
             $fname      =$_POST['fname'];
             $femail     =$_POST['femail'];

@@ -12,12 +12,12 @@ class BookModel extends Model
     public function insert(){
         if(isset($_POST['done'])){
             $fullname=$_POST['name'];
-              $email=$_POST['email'];
-              $phone_number=$_POST['phone'];
-              $movie_name=$_POST['movie_name'];
-              $number_of_tickets=$_POST['num_of_tickets'];
-              $movie_time=$_POST['movie_time'];
-              $seat_number=$_POST['seat_number'];
+            $email=$_POST['email'];
+            $phone_number=$_POST['phone'];
+            $movie_name=$_POST['movie_name'];
+            $number_of_tickets=$_POST['num_of_tickets'];
+            $movie_time=$_POST['movie_time'];
+            $seat_number=$_POST['seat_number'];
             $food=$_POST['food'];
             $food2=implode(',',$food);
             $card_num=$_POST['card_number'];

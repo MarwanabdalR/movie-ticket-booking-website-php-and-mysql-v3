@@ -7,20 +7,17 @@ $dbname="book_cinema";
 
 $connect= mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 
-if(!$connect){
-
-    die("faiiiiiiiled" . mysqli_connect_error());
-
-}
-else{
-    echo "Connection succeeded";
-
-}
-
 $select = "SELECT * FROM `movies`";
 $res = mysqli_query($connect,$select);
 // $message = '';
+$select2 = "SELECT * FROM `users`";
+$res2 = mysqli_query($connect,$select2);
 
+$select3 = "SELECT * FROM `cinemas`";
+$res3 = mysqli_query($connect,$select3);
+
+$select4 = "SELECT * FROM `movie_cinemas`";
+$res4 = mysqli_query($connect,$select4);
 
 
 
@@ -98,18 +95,25 @@ $res = mysqli_query($connect,$select);
                     <div class="col-xl">
                     <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                      <!--  <h5 class="mb-0">Movie Booking Form</h5>-->
+                    <!--  <h5 class="mb-0">Movie Booking Form</h5>-->
                         </div>
                         <div class="card-body">
         
+<?php
+    
 
+    // Show the ticket form
+    
+    echo '</form>';
+    
+?>
                         <form method="post">
                         <div class="inputBox">
             <span>card number</span>
             <input required type="text" name="card_number" maxlength="16" class="card-number-input">
         </div>
         <div class="inputBox">
-            <span>card holder</span>
+            <span> Name On Card</span>
             <input required type="text" name="card_holder" class="card-holder-input">
         </div>
         <div class="flexbox">
@@ -161,6 +165,16 @@ $res = mysqli_query($connect,$select);
                             name="name" 
                             id="basic-default-fullname" 
                             placeholder="John Doe" 
+
+    <?php if ($res2) {
+  		while ($row2 = mysqli_fetch_assoc($res2)) {
+  			
+  	?>
+
+                            value="<?php echo $row2['name']; ?>"
+
+
+
                             />
                             </div>
                             
@@ -176,6 +190,15 @@ $res = mysqli_query($connect,$select);
                                 placeholder="john.doe"
                                 aria-label="john.doe"
                                 aria-describedby="basic-default-email2"
+
+
+                                
+                                value="<?php echo $row2['email']; ?>"
+
+                     
+
+
+
                                 />
                                 <span class="input-group-text" id="basic-default-email2">@example.com</span>
                             </div>
@@ -192,7 +215,19 @@ $res = mysqli_query($connect,$select);
                                 name="phone"
                                 class="form-control phone-mask"
                                 placeholder="658 799 8941"
+                                value="<?php echo $row2['mobile_number']; ?>"
+
                             />
+
+
+
+       <?php
+	}
+  	}
+
+  	 ?>
+
+
                             </div>
                             
                         
@@ -220,6 +255,18 @@ $res = mysqli_query($connect,$select);
                                             <?php foreach($res as $key => $value){?>
                                             <option 
                                                 value="<?=$value['name'];?>"><?=$value['name'];?>
+                                            </option>
+                                            <?php } ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="categories">Cinema</label>
+                                <select id="categories" name="cinema_name" class="form-control" required>
+                                            <option>select ur cinema</option>
+                                            <?php foreach($res3 as $key3 => $value1){?>
+                                            <option 
+                                                value="<?=$value1['name'];?>"><?=$value1['name'];?>
                                             </option>
                                             <?php } ?>
                                 </select>
@@ -253,10 +300,21 @@ $res = mysqli_query($connect,$select);
                             id="basic-default-company" 
                             placeholder="number of tickets" />
                             </div>
-                            <div class="mb-3">
-                            <label class="form-label" for="basic-default-company">Movie Time</label>
-                            <input type="time" class="form-control" name="movie_time" required id="basic-default-company" placeholder="hours:minutes" />
+
+
+                            <div class="form-group">
+                                <label for="categories">Movie Time</label>
+                                <select id="categories" name="movie_time" class="form-control" required>
+                                            <option>select ur Time</option>
+                                            <?php foreach($res4 as $key => $value){?>
+                                            <option 
+                                                value="<?=$value['movie_time'];?>"><?=$value['movie_time'];?>
+                                            </option>
+                                            <?php } ?>
+                                </select>
                             </div>
+
+
                             <div class="mb-3">
                             <label class="form-label" for="basic-default-company">Seat Number</label>
                             <input type="text" class="form-control" required name="seat_number" id="basic-default-company" placeholder="seat number" />
@@ -299,7 +357,63 @@ $res = mysqli_query($connect,$select);
     height: 18px;
 }
                     </style>
+                    
                     <input type="submit" value="submit" name="done" class="submit-btn">
+
+                    
+
+
+
+
+
+<?php 
+if (isset($_POST['done'])) {
+    // Get the submitted data
+    $name = $_POST['name'];
+    $email = $_POST['movie_name'];
+    $subject = $_POST['cinema_name'];
+    $message = $_POST['num_of_tickets'];
+echo '<form id="ticket-form">';
+    echo '<label>Name: ' . $name . '</label><br>';
+    echo '<label>Movie: ' . $email . '</label><br>';
+    echo '<label>Cinema: ' . $subject . '</label><br>';
+    echo '<label>Number Of Ticket: ' . $message . '</label><br>';
+}
+
+
+?>
+
+
+
+
+
+
+
+
+<!-- <form method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name"><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br>
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject"><br>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea><br>
+<button type="submit" name="submit">Submit Ticket</button>
+                    </form> -->
+
+
+
+
+
+
+
+
+
+
 
                          <!--   <button type="submit" class="btn btn-primary" required name="done"  > Book Now</button>-->
                         </form>
@@ -313,9 +427,30 @@ $res = mysqli_query($connect,$select);
                 <!-- / Content -->
 
 
-    <form action="" method="POST">
-       
-    </form>
+
+
+
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>    
     
@@ -356,7 +491,39 @@ document.querySelector('.cvv-input').oninput = () =>{
     document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
 }
 
+
+
+
+
+
+
+
+
+$(document).ready(function() {
+  $('form').submit(function(event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+
+    // Show the ticket form
+    $('#ticket-form').show();
+  });
+});
+
+
+
+
+
+
 </script>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
 
 <style>
 

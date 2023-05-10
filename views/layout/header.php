@@ -46,10 +46,23 @@
                 </div>
                 <div class="header-right">
                         <ul>
-                            <?php if (isset($_SESSION["user"])) { ?>
-                                <li><a href="javascript:void(0);">Welcome ya 7oob🫡😘!</a></li>
+
+                        <?php
+                        $dbhost="localhost";
+                        $dbuser="root";
+                        $dbpass="";
+                        $dbname="book_cinema";
+                        $connect= mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+                        $select = "SELECT * FROM `users`";
+                        $run = mysqli_query($connect,$select);
+                        ?>
+                            <?php if (isset($_SESSION["user"])) { 
+                                    if ($row=mysqli_fetch_assoc($run)) {
+                                ?>
+                                <li><a href="javascript:void(0);">Welcome  <?php echo ' ' . $row['name']; ?>  !</a></li>
                                 <li><a href="<?= URL; ?>user/logout">Logout</a></li>
-                            <?php } else { ?>
+                            <?php }
+                                } else { ?>
                                 <li><a href="javascript:void(0);">Welcome Guest</a></li>
                                 <li><a class="login-popup" href="#">Login</a></li>
                             <?php } ?>
@@ -66,8 +79,10 @@
                                     href="<?= URL; ?>movie/all">Movies</a></li>
                             <li><a class="<?= stripos($_SERVER['QUERY_STRING'], 'celebrity') ? 'active' : ''; ?>"
                                     href="<?= URL . 'celebrity'; ?>">CelebritiesList</a></li>
+                                    <?php if (isset($_SESSION["user"])) { ?>
                             <li><a class="<?= stripos($_SERVER['QUERY_STRING'], 'bookk') ? 'active' : ''; ?>"
                                     href="<?= URL . 'bookk'; ?>"> Booking</a></li>
+                                    <?php                                       } ?>
                         </ul>
                     </div>
                     <?php
@@ -85,12 +100,11 @@
     }
 ?>
 
-                    <div class="row" style="width:380px; margin-left:360px">
+                    <div class="row" style="position: absolute;right: 70%;bottom: 2%;">
                         <div class="col-lg-12" >
                             <input type="search" class="form-control rounded" placeholder="Search" id='search' aria-label="Search" aria-describedby="search-addon"/>
                         </div>
                     </div>
-
 
 
 
