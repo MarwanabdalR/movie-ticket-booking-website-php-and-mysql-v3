@@ -242,15 +242,15 @@ require_once 'layout/lang/'.$_SESSION['lang'].'.php';
         <div class="row flexbox-center">
             <div class="col-lg-6 text-center text-lg-left">
                 <div class="section-title">
-                    <h1><i class="icofont icofont-movie"></i> Spotlight of Months</h1>
+                    <h1><i class="icofont icofont-movie"></i> <?php echo $hedr['spot'] ?></h1>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="portfolio-menu">
                     <ul>
-                        <li data-filter=".all" class="active">All</li>
-                        <li data-filter=".latest">Latest</li>
-                        <li data-filter=".soon">Comming Soon</li>
+                        <li data-filter=".all" class="active"><?php echo $hedr['all'] ?></li>
+                        <li data-filter=".latest"><?php echo $hedr['last'] ?></li>
+                        <li data-filter=".soon"><?php echo $hedr['come'] ?></li>
                     </ul>
                 </div>
             </div>
@@ -327,7 +327,7 @@ require_once 'layout/lang/'.$_SESSION['lang'].'.php';
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title pb-20">
-                    <h1><i class="icofont icofont-film"></i> Trailers & Videos</h1>
+                    <h1><i class="icofont icofont-film"></i><?php echo $hedr['ved'] ?></h1>
                 </div>
             </div>
         </div>
@@ -425,6 +425,7 @@ require_once 'layout/lang/'.$_SESSION['lang'].'.php';
     </div>
 </section><!-- video section end -->
 
+<<<<<<< Updated upstream
 
     <div class="container">
         <div class="row">
@@ -484,4 +485,11 @@ require_once 'layout/lang/'.$_SESSION['lang'].'.php';
                     <li><a href="?lang=ar"><?php echo $hedr['ar'] ?></a></li>
                     <li><a href="?lang=en"><?php echo $hedr['en'] ?></a></li>
                 </ul>
+=======
+             
+                    <span id="arbic"><a href="?lang=ar"><?php echo $hedr['ar'] ?></a></span>
+                   
+                    <span id="arbic"><a href="?lang=en"><?php echo $hedr['en'] ?></a></span>   
+                
+>>>>>>> Stashed changes
                 <!-- <p style="margin-top: 20px;" ><?php //echo $hedr['title'] ?></p> -->

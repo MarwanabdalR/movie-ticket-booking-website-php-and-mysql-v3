@@ -6,27 +6,27 @@
                 <div class="widget">
                     <img src="<?= IMG; ?>logo.png" alt="about" />
                     <p>7th Harley Place, London W1G 8LZ United Kingdom</p>
-                    <h6><span>Call us: </span>(+880) 111 222 3456</h6>
+                    <h6><span> <?php echo $hedr['call'] ?></span>(+880) 111 222 3456</h6>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                         <div class="widget">
-                            <h4>Legal</h4>
+                            <h4><?php echo $hedr['leg'] ?></h4>
                             <ul>
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Security</a></li>
+                                <li><a href="#"><?php echo $hedr['term'] ?></a></li>
+                                <li><a href="#"><?php echo $hedr['priv'] ?></a></li>
+                                <li><a href="#"><?php echo $hedr['sec'] ?></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="widget">
-                            <h4>Account</h4>
+                            <h4><?php echo $hedr['acc'] ?></h4>
                             <ul>
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Watchlist</a></li>
-                                <li><a href="#">Collections</a></li>
-                                <li><a href="#">User Guide</a></li>
+                                <li><a href="#"><?php echo $hedr['my acc'] ?></a></li>
+                                <li><a href="#"><?php echo $hedr['watch'] ?></a></li>
+                                <li><a href="#"><?php echo $hedr['coll'] ?></a></li>
+                                <li><a href="#"><?php echo $hedr['user'] ?></a></li>
                             </ul>
                         </div>
                     </div>
