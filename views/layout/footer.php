@@ -1,4 +1,23 @@
 <!-- footer section start -->
+<?php
+
+if(!isset($_SESSION['lang'])){
+    $_SESSION['lang'] = 'ar';
+}
+
+if(isset($_GET['lang']) && !empty($_GET['lang']) ){
+        if ($_GET['lang'] == 'ar' ) {
+            # code...
+        $_SESSION['lang'] = 'ar';
+        }
+        elseif ($_GET['lang'] == 'en') {
+            # code...
+            $_SESSION['lang'] = 'en';
+        }
+}	
+require_once 'lang/'.$_SESSION['lang'].'.php';
+
+?>
 <footer class="footer" id="footer-section">
     <div class="container">
         <div class="row">

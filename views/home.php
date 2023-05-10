@@ -481,10 +481,7 @@ require_once 'layout/lang/'.$_SESSION['lang'].'.php';
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-                <ul>
-                    <li><a href="?lang=ar"><?php echo $hedr['ar'] ?></a></li>
-                    <li><a href="?lang=en"><?php echo $hedr['en'] ?></a></li>
-                </ul>
+               
 =======
              
                     <span id="arbic"><a href="?lang=ar"><?php echo $hedr['ar'] ?></a></span>
