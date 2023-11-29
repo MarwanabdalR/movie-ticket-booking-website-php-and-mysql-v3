@@ -1,2 +1,2 @@
 # movie-ticket-booking-website-php-and-mysql-v3
-سمووووعليكوو سموووعليكوووو رجعنالكم بالجديد عندنا 
+Software system ( php - sql - html - css - js - jqury - bootstrap )
